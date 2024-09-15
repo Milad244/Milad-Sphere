@@ -1,0 +1,184 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+.background-1 {
+  background-color: rgb(236, 236, 236); 
+}
+.no-display{
+  display: none;
+}
+
+/* Header */
+.container-fluid .navbar-brand{
+  font-size: 1.5em; 
+}
+#navbarNav .nav-link{
+  font-size: 1.3em;
+}
+
+/* Main */
+.main-title{
+  text-align: center;
+  font-size: 2em;
+  padding: 35px;
+  color: #000000;
+}
+
+/* Index */
+.index-title{
+  text-align: center;
+  font-size: 2.5em;
+  padding: 15px;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.settings-container {
+  flex: 0.2;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.settings-container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #495057;
+}
+
+.settings-container h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #6c757d;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.settings-container h3:hover {
+  color: #959799;
+}
+
+.dark-mode-option label{
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #495057;
+}
+
+.dark-mode-option input {
+  transform: scale(1.2);
+}
+
+.game-container {
+  flex: 0.75;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .main-container {
+      flex-direction: column-reverse;
+  }
+
+  .settings-container {
+      margin-top: 20px;
+      margin-right: 0;
+      flex: unset;
+  }
+
+  .game-container {
+      flex: unset;
+  }
+}
+
+/* Projects */
+/*  */
+/* Projects container layout */
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Title styles */
+
+/* Individual project container */
+.specific-project-container {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #f8f9fa; /* Bootstrap light background */
+}
+
+/* Style for project link paragraphs */
+.project-link {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+/* Specific style for the link inside project-link */
+.project-link .link {
+  color: #007bff; /* Bootstrap primary color */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.project-link .link:hover {
+  text-decoration: underline;
+}
+
+/* Card body in collapse */
+.card-body {
+  background-color: #ffffff; /* Bootstrap white */
+  margin-left: 10px;
+}
+
+/* Specific project container spacing */
+.specific-project-container:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+
+/* Contact */
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.specific-contact-container {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.specific-contact-container h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #343a40;
+}
+
+.specific-contact-container p {
+  font-size: 1rem;
+  margin: 0;
+  color: #6c757d;
+}
+
