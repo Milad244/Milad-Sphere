@@ -1,0 +1,11 @@
+# Progress Tracker
+
+## Short-Term Tasks
+- [ ] Task: Fix the word wrap issue on mobile
+
+## Long-Term Tasks
+- [ ] Task: Add descriptions(about why I ranked it where I did) to each of my show rankings when you click on them
+- [ ] Task: Finish all the pages so they are all operational
+
+## Completed Tasks
+- [x] Task: Add shows.html

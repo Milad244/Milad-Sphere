@@ -105,8 +105,6 @@
 }
 
 /* Projects */
-/*  */
-/* Projects container layout */
 .projects-container {
   display: flex;
   flex-direction: column;
@@ -115,25 +113,20 @@
   margin: auto;
 }
 
-/* Title styles */
-
-/* Individual project container */
 .specific-project-container {
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
-  background-color: #f8f9fa; /* Bootstrap light background */
+  background-color: #f8f9fa;
 }
 
-/* Style for project link paragraphs */
 .project-link {
   font-size: 1rem;
   margin-bottom: 5px;
 }
 
-/* Specific style for the link inside project-link */
 .project-link .link {
-  color: #007bff; /* Bootstrap primary color */
+  color: #007bff;
   text-decoration: none;
   font-weight: bold;
 }
@@ -142,13 +135,11 @@
   text-decoration: underline;
 }
 
-/* Card body in collapse */
 .card-body {
-  background-color: #ffffff; /* Bootstrap white */
+  background-color: #ffffff;
   margin-left: 10px;
 }
 
-/* Specific project container spacing */
 .specific-project-container:not(:last-child) {
   margin-bottom: 30px;
 }
@@ -182,3 +173,39 @@
   color: #6c757d;
 }
 
+/* Shows */
+.showlist-header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow-button {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.3s, background-color 0.3s;
+  margin: 0 10px;
+}
+
+.arrow-button:hover {
+  transform: scale(1.05);
+}
+
+#showlist-container {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.showlist-description {
+  text-align: center;
+  font-size: 1.25rem; 
+  margin-bottom: 15px;
+}

@@ -6,10 +6,11 @@
   <link href="css/style.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <title>Milad Sphere - About</title>
+  <script src="app.js"></script>
+  <title>Milad Sphere - Shows</title>
 </head>
 <body class="background-1">
-  <div id="pageId" class="no-display">about</div>
+  <div id="pageId" class="no-display">shows</div>
   <header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
@@ -23,7 +24,7 @@
               <a class="nav-link" href="stories.html">Stories</a>
             </li>
             <li class="nav-item"></li>
-              <a class="nav-link" href="shows.html">Shows</a>
+              <a class="nav-link active" href="shows.html">Shows</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="projects.html">Projects</a>
@@ -32,15 +33,25 @@
               <a class="nav-link" href="contact.html">Contact</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="about.html">About</a>
+              <a class="nav-link" href="about.html">About</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
   </header>
+
   <main>
-    <h3>Coming Soon</h3>
+    <div class="showlist-header">
+        <button id="prev-category" class="arrow-button">&#10094;</button>
+        <h2 id="showcategory-title" class="main-title">Loading...</h2>
+        <button id="next-category" class="arrow-button">&#10095;</button>
+    </div>
+
+    <div id="showlist-container">
+      
+    </div>
   </main>
+
 </body>
 </html>
