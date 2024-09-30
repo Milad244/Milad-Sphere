@@ -2,6 +2,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const pageId = document.getElementById('pageId').textContent.trim();
   if (pageId === 'shows') {
     handleShows();
+  } else if(pageId === 'index'){
+    handleIndex();
+  } else if (pageId === 'about'){
+    handleAbout();
   }
 });
 
@@ -68,4 +72,23 @@ function handleShows() {
   });
 
   loadShows();
+}
+
+function handleIndex(){
+
+}
+
+function handleAbout(){
+  const birthDate = new Date("2006-11-30");
+  const today = new Date();
+  
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const monthDifference = today.getMonth() - birthDate.getMonth();
+
+  if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+
+  const ageSpan = document.getElementById("about-age"); 
+  ageSpan.textContent = age;
 }
