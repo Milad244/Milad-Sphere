@@ -74,8 +74,46 @@ function handleShows() {
   loadShows();
 }
 
-function handleIndex(){
+function handleIndex() {
+  let spinInterval;
+  let totalSpin = 0;
+  let spinning = false;
 
+  document.getElementById('randomPlanet').addEventListener('click', function(event) {
+    event.preventDefault();
+
+    if (spinning) return;
+
+    const arrow = document.getElementById('randomArrow');
+    const planets = document.querySelectorAll('.planet');
+    const spinTime = Math.random() * 5000;
+
+    spinning = true;
+
+    spinInterval = setInterval(() => {
+      totalSpin += 20;
+      arrow.style.transform = `rotate(${totalSpin}deg)`;
+    }, 50);
+
+    setTimeout(() => {
+      clearInterval(spinInterval);
+
+      const randomIndex = Math.floor(Math.random() * planets.length);
+      const chosenPlanet = planets[randomIndex];
+
+      const chosenPlanetCoords = chosenPlanet.getBoundingClientRect();
+      const sphereCenter = arrow.getBoundingClientRect();
+
+      const angle = Math.atan2(
+        chosenPlanetCoords.top - sphereCenter.top,
+        chosenPlanetCoords.left - sphereCenter.left
+      ) * (180 / Math.PI);
+
+      arrow.style.transform = `rotate(${angle}deg)`;
+
+      spinning = false;
+    }, spinTime);
+  });
 }
 
 function handleAbout(){

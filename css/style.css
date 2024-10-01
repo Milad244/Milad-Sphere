@@ -36,30 +36,143 @@ a {
 }
 
 /* Index */
-.index-title{
+.index-title {
   text-align: center;
   font-size: 2.5em;
   padding: 15px;
 }
 
-.game-container {
+.index-page {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
   text-align: center;
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 768px) {
-  .main-container {
-      flex-direction: column-reverse;
+.sphere-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+}
+
+.sphere {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.planet {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.3s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #9d32f5, #6a00ff)
+}
+
+/* Distribute 5 planets around the sphere */
+.planet:nth-child(1) {
+  transform: translate(0, -180px);
+}
+
+.planet:nth-child(2) {
+  transform: translate(171px, -55px);
+}
+
+.planet:nth-child(3) {
+  transform: translate(105px, 145px);
+}
+
+.planet:nth-child(4) {
+  transform: translate(-105px, 145px);
+}
+
+.planet:nth-child(5) {
+  transform: translate(-171px, -55px);
+}
+
+.planet:hover {
+  /* transform: scale(1.2); Causes planets to go nuts*/ 
+}
+
+.planet-random {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  z-index: 1;
+  font-size: 1.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: transform 0.3s;
+  color: white;
+  user-select: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  background: linear-gradient(315deg, #2c81ff 30%, #1b5fc7 70%);
+}
+
+.planet-random .arrow {
+  font-size: 2em;
+  display: block;
+  margin-bottom: -15px;
+}
+
+.planet-random:hover {
+  transform: scale(1.2);
+}
+
+@media (max-width: 500px) {
+  .planet {
+    width: 75px;
+    height: 75px; 
+  }
+  
+  .planet:nth-child(1) {
+    transform: translate(0, -140px);
   }
 
-  .settings-container {
-      margin-top: 20px;
-      margin-right: 0;
-      flex: unset;
+  .planet:nth-child(2) {
+    transform: translate(135px, -40px);
   }
 
-  .game-container {
-      flex: unset;
+  .planet:nth-child(3) {
+    transform: translate(85px, 115px);
   }
+
+  .planet:nth-child(4) {
+    transform: translate(-85px, 115px);
+  }
+
+  .planet:nth-child(5) {
+    transform: translate(-135px, -40px);
+  }
+
+  .planet-random:hover {
+    transform: scale(1);
+  }
+
 }
 
 /* Projects */
