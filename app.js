@@ -6,8 +6,45 @@ document.addEventListener("DOMContentLoaded", function () {
     handleIndex();
   } else if (pageId === 'about'){
     handleAbout();
+  } else if(pageId === 'writing'){
+    handleWriting();
   }
 });
+
+function handleWriting() {
+  loadWriting("writing/The Dream");
+
+  async function fetchTextFromFile(filePath) {
+    try {
+      const response = await fetch(filePath);
+      if (!response.ok) {
+        throw new Error(`Error fetching ${filePath}`);
+      }
+      return await response.text();
+    } catch (error) {
+      console.error('Error:', error);
+      return '';
+    }
+  }
+
+  async function loadWriting(storyFolder) {
+    try {
+      const title = await fetchTextFromFile(`${storyFolder}/Title.txt`);
+      const content = await fetchTextFromFile(`${storyFolder}/Content.txt`);
+      const authorNotes = await fetchTextFromFile(`${storyFolder}/AuthorNotes.txt`);
+
+      document.getElementById('writing-title').innerText = title;
+
+      // Wrap each line of content in <p> tags
+      const paragraphs = content.split('\n').map(line => `<p>${line}</p>`).join('');
+      document.getElementById('writing-content').innerHTML = paragraphs;
+
+      document.getElementById('writing-author-notes').innerText = `Author Notes: ${authorNotes}`;
+    } catch (error) {
+      console.error('Error loading writing:', error);
+    }
+  }
+}
 
 function handleShows() {
   const categories = [];
@@ -88,6 +125,8 @@ function handleIndex() {
     const planets = document.querySelectorAll('.planet');
     const spinTime = Math.random() * 5000;
 
+    arrow.style.transformOrigin = '50% 50%';
+
     spinning = true;
 
     spinInterval = setInterval(() => {
@@ -102,11 +141,16 @@ function handleIndex() {
       const chosenPlanet = planets[randomIndex];
 
       const chosenPlanetCoords = chosenPlanet.getBoundingClientRect();
-      const sphereCenter = arrow.getBoundingClientRect();
+      const arrowCoords = arrow.getBoundingClientRect();
+
+      const arrowCenterX = arrowCoords.left + arrowCoords.width / 2;
+      const arrowCenterY = arrowCoords.top + arrowCoords.height / 2;
+      const planetCenterX = chosenPlanetCoords.left + chosenPlanetCoords.width / 2;
+      const planetCenterY = chosenPlanetCoords.top + chosenPlanetCoords.height / 2;
 
       const angle = Math.atan2(
-        chosenPlanetCoords.top - sphereCenter.top,
-        chosenPlanetCoords.left - sphereCenter.left
+        planetCenterY - arrowCenterY,
+        planetCenterX - arrowCenterX
       ) * (180 / Math.PI);
 
       arrow.style.transform = `rotate(${angle}deg)`;

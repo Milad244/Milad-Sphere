@@ -293,6 +293,38 @@ a {
   margin-bottom: 15px;
 }
 
+/* Writing */
+#writing-container {
+  max-width: 1600px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+#writing-title {
+  font-size: 2em;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#writing-content {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin: 15px 0;
+  text-indent: 2em;
+  margin-bottom: 1em;
+}
+
+#writing-author-notes {
+  font-style: italic;
+  color: #555;
+  margin-top: 20px;
+}
+
+
 /* About */
 .about-page {
   max-width: 1600px;
@@ -350,20 +382,5 @@ h2 {
 
 .additional-info h3 {
   font-size: 24px;
-  color: #400e9b;
   margin-bottom: 15px;
-}
-
-.additional-info ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.additional-info ul li {
-  font-size: 18px;
-  margin: 10px 0;
-  padding: 10px;
-  background-color: #dafceb; /* Light background for list items */
-  border-radius: 10px;
-  transition: background-color 0.3s ease;
 }
