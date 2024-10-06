@@ -42,6 +42,13 @@ a {
   padding: 15px;
 }
 
+.index-h3 {
+  text-align: center;
+  font-size: 1.5em;
+  padding-bottom: 15px;
+}
+
+
 .index-page {
   max-width: 1200px;
   margin: auto;
@@ -145,8 +152,8 @@ a {
 
 @media (max-width: 500px) {
   .planet {
-    width: 75px;
-    height: 75px; 
+    width: 90px;
+    height: 90px; 
   }
   
   .planet:nth-child(1) {
@@ -171,6 +178,11 @@ a {
 
   .planet-random:hover {
     transform: scale(1);
+  }
+
+  .planet-random{
+    width: 125px;
+    height: 125px;
   }
 
 }
@@ -310,12 +322,52 @@ a {
   text-align: center;
 }
 
+#story-selector {
+  padding: 8px 12px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #333;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+#story-selector:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+#story-selector option {
+  padding: 10px;
+}
+
+
+#writing-byline{
+  font-size: 1.1em;
+  font-style: italic;
+  color: #777;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
 #writing-content {
   font-size: 1.2em;
   line-height: 1.6;
   margin: 15px 0;
   text-indent: 2em;
   margin-bottom: 1em;
+}
+
+#writing-content h4 {
+  font-size: 1.25em;
+  font-weight: bold;
+  margin: 20px 0;
+  color: #333;
+  text-align: left;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
 }
 
 #writing-author-notes {
@@ -383,4 +435,21 @@ h2 {
 .additional-info h3 {
   font-size: 24px;
   margin-bottom: 15px;
+}
+
+.programming-container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.programming-container div {
+  flex: 1;
+}
+
+@media (max-width: 900px) {
+  .programming-container {
+    flex-direction: column;
+  }
 }

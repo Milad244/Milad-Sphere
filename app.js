@@ -7,43 +7,73 @@ document.addEventListener("DOMContentLoaded", function () {
   } else if (pageId === 'about'){
     handleAbout();
   } else if(pageId === 'writing'){
-    handleWriting();
+    handleWriting("The Dream");
   }
 });
 
-function handleWriting() {
-  loadWriting("writing/The Dream");
+function handleWriting(selectedWriting) {
+  fetch('writing/writing.json')
+    .then(response => response.json())
+    .then(data => {
+      let writingTitle = selectedWriting;
+      const writing = data.writing.find(item => item.title === writingTitle);
 
-  async function fetchTextFromFile(filePath) {
-    try {
-      const response = await fetch(filePath);
-      if (!response.ok) {
-        throw new Error(`Error fetching ${filePath}`);
+      if (writing) {
+        document.getElementById('writing-title').innerText = writing.title;
+        document.getElementById('writing-byline').innerText = writing.byline;
+        loadAuthorNotes(writing.authorNotes);
+
+        if (writing.chapters) {
+          loadChapters(writing.chapters);
+        } else {
+          loadContent(writing.contentFile);
+        }
+
+      } else {
+        console.error('Writing not found');
       }
-      return await response.text();
-    } catch (error) {
-      console.error('Error:', error);
-      return '';
-    }
-  }
+    })
+    .catch(error => console.error('Error loading writing data:', error));
 
-  async function loadWriting(storyFolder) {
-    try {
-      const title = await fetchTextFromFile(`${storyFolder}/Title.txt`);
-      const content = await fetchTextFromFile(`${storyFolder}/Content.txt`);
-      const authorNotes = await fetchTextFromFile(`${storyFolder}/AuthorNotes.txt`);
-
-      document.getElementById('writing-title').innerText = title;
-
-      // Wrap each line of content in <p> tags
+    async function loadContent(filePath) {
+      const content = await fetchTextFromFile(filePath);
       const paragraphs = content.split('\n').map(line => `<p>${line}</p>`).join('');
       document.getElementById('writing-content').innerHTML = paragraphs;
-
-      document.getElementById('writing-author-notes').innerText = `Author Notes: ${authorNotes}`;
-    } catch (error) {
-      console.error('Error loading writing:', error);
     }
-  }
+    
+    async function loadChapters(chapters) {
+      const writingContentElement = document.getElementById('writing-content');
+      writingContentElement.innerHTML = '';
+    
+      for (const chapter of chapters) {
+        const chapterTitleElement = document.createElement('h4');
+        chapterTitleElement.innerText = chapter.chapterTitle;
+    
+        const chapterContent = await fetchTextFromFile(chapter.contentFile);
+        const paragraphs = chapterContent.split('\n').map(line => `<p>${line}</p>`).join('');
+    
+        writingContentElement.appendChild(chapterTitleElement);
+        writingContentElement.innerHTML += paragraphs;
+      }
+    }
+    
+    async function loadAuthorNotes(filePath) {
+      const authorNotes = await fetchTextFromFile(filePath);
+      document.getElementById('writing-author-notes').innerText = `Author Notes: ${authorNotes}`;
+    }
+
+    async function fetchTextFromFile(filePath) {
+      try {
+        const response = await fetch(filePath);
+        if (!response.ok) {
+          throw new Error(`Error fetching ${filePath}`);
+        }
+        return await response.text();
+      } catch (error) {
+        console.error('Error:', error);
+        return '';
+      }
+    }
 }
 
 function handleShows() {

@@ -1,0 +1,21 @@
+{
+  "writing": [
+    {
+      "title": "The Dream",
+      "byline": "Milad Abdi, 2024-09-10",
+      "authorNotes": "writing/The Dream/AuthorNotes.txt",
+      "contentFile": "writing/The Dream/Content.txt"
+    },
+    {
+      "title": "The Portal Unseen",
+      "byline": "Milad Abdi, 2024-10-05",
+      "authorNotes": "writing/The Portal Unseen/AuthorNotes.txt",
+      "chapters": [
+        {
+          "chapterTitle": "Chapter 1 - A New World",
+          "contentFile": "writing/The Portal Unseen/Chapter1.txt"
+        }
+      ]
+    }
+  ]
+}

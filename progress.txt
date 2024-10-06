@@ -1,12 +1,15 @@
 # Progress Tracker
 
 ## Short-Term Tasks
-- [ ] Task: Make all long text into text files and create a func to handle them easily.
+- [ ] Task: 
 
 ## Long-Term Tasks
+- [ ] Task: Unify a lot of the css 
 - [ ] Task: Add descriptions(about why I ranked it where I did) to each of my show rankings when you click on them
+- [ ] Task: Make all long text into text files and create a func to handle them easily.
 
 ## Completed Tasks
 - [x] Task: Add shows.
 - [x] Task: Fix the word wrap issue on mobile
 - [x] Task: Finish all the pages so they are all operational
+- [x] Task: Add Milad Sphere to projects (mention testing out a professional design)
