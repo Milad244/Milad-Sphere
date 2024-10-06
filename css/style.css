@@ -45,7 +45,8 @@ a {
 .index-h3 {
   text-align: center;
   font-size: 1.5em;
-  padding-bottom: 15px;
+  padding-top: 0px;
+  padding: 15px;
 }
 
 
@@ -320,6 +321,11 @@ a {
   font-size: 2em;
   margin-bottom: 10px;
   text-align: center;
+}
+
+.center-wrapper {
+  display: flex;
+  justify-content: center;
 }
 
 #story-selector {

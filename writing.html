@@ -42,13 +42,15 @@
   </header>
 
   <main>
-    <h1 class="main-title"></h1>
-    <div id="writing-container">
-      <h1 id="writing-title"></h1>
+    <h1 class="main-title">My Writing</h1>
+    <div class="center-wrapper">
       <select id="story-selector" onchange="handleWriting(this.value)">
         <option value="The Dream">The Dream</option>
         <option value="The Portal Unseen">The Portal Unseen</option>
-    </select>    
+      </select>    
+    </div>
+    <div id="writing-container">
+      <h1 id="writing-title"></h1>
       <p id="writing-byline"></p>
       <div id="writing-content"></div>
       <p id="writing-author-notes"></p>
