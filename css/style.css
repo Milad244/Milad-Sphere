@@ -16,7 +16,7 @@ a {
   background-color: rgb(236, 236, 236); 
 }
 .no-display{
-  display: none;
+  display: none!important;
 }
 
 /* Header */
@@ -92,8 +92,8 @@ a {
   font-weight: bold;
   text-decoration: none;
   transition: transform 0.3s;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  background: linear-gradient(135deg, #9d32f5, #6a00ff)
+  background: linear-gradient(135deg, #3a5eae, #0a2b5c);
+  box-shadow: 0 0 15px rgba(58, 94, 174, 0.8), 0 0 20px rgba(58, 94, 174, 0.6);
 }
 
 /* Distribute 5 planets around the sphere */
@@ -118,7 +118,13 @@ a {
 }
 
 .planet:hover {
-  /* transform: scale(1.2); Causes planets to go nuts*/ 
+  /* transform: scale(1.2);
+  /*Causes planets to go nuts*/ 
+}
+
+.planet.active {
+  background: linear-gradient(135deg, #d00000, #7f0000);
+  box-shadow: 0 0 20px rgba(199, 0, 0, 0.8);;
 }
 
 .planet-random {
@@ -136,9 +142,9 @@ a {
   transition: transform 0.3s;
   color: white;
   user-select: none;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   font-weight: bold;
-  background: linear-gradient(315deg, #2c81ff 30%, #1b5fc7 70%);
+  background: radial-gradient(circle, rgba(0, 0, 0, 1) 0%, rgba(15, 15, 50, 1) 60%, rgba(0, 0, 100, 1) 100%);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 40px rgba(0, 0, 0, 0.8), 0 0 60px rgba(255, 0, 255, 0.8);
 }
 
 .planet-random .arrow {

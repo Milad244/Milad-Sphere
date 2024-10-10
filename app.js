@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   } else if (pageId === 'about'){
     handleAbout();
   } else if(pageId === 'writing'){
-    handleWriting("The Dream");
+    handleWriting("The Portal Unseen");
   }
 });
 
@@ -143,32 +143,39 @@ function handleShows() {
 
 function handleIndex() {
   let spinInterval;
-  let totalSpin = 0;
   let spinning = false;
 
   document.getElementById('randomPlanet').addEventListener('click', function(event) {
+
     event.preventDefault();
 
     if (spinning) return;
 
+    let totalSpin = 0;
+
     const arrow = document.getElementById('randomArrow');
     const planets = document.querySelectorAll('.planet');
-    const spinTime = Math.random() * 5000;
+    const spinTime = 3000;
 
+    planets.forEach(planet => {
+      planet.classList.remove('active');
+    });   
+
+    arrow.style.transform = `rotate(0deg)`;
     arrow.style.transformOrigin = '50% 50%';
-
+    arrow.classList.remove('no-display');
     spinning = true;
 
     spinInterval = setInterval(() => {
-      totalSpin += 20;
-      arrow.style.transform = `rotate(${totalSpin}deg)`;
+        totalSpin += 20;
+        arrow.style.transform = `rotate(${totalSpin}deg)`;
     }, 50);
 
     setTimeout(() => {
       clearInterval(spinInterval);
 
       const randomIndex = Math.floor(Math.random() * planets.length);
-      const chosenPlanet = planets[randomIndex];
+      const chosenPlanet = planets[randomIndex];     
 
       const chosenPlanetCoords = chosenPlanet.getBoundingClientRect();
       const arrowCoords = arrow.getBoundingClientRect();
@@ -179,13 +186,23 @@ function handleIndex() {
       const planetCenterY = chosenPlanetCoords.top + chosenPlanetCoords.height / 2;
 
       const angle = Math.atan2(
-        planetCenterY - arrowCenterY,
-        planetCenterX - arrowCenterX
+          planetCenterY - arrowCenterY,
+          planetCenterX - arrowCenterX
       ) * (180 / Math.PI);
 
-      arrow.style.transform = `rotate(${angle}deg)`;
+      const offset = -30;
+      const finalRotation = totalSpin + angle + offset;
 
-      spinning = false;
+      console.log(`Total Spin: ${totalSpin}, Angle: ${angle}, Final Rotation: ${finalRotation}`);
+
+      arrow.style.transform = `rotate(${finalRotation}deg)`;
+      chosenPlanet.classList.add('active');
+
+      setTimeout(() => {
+          arrow.classList.add('no-display');
+          spinning = false;
+      }, 1000);
+
     }, spinTime);
   });
 }

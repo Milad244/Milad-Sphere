@@ -13,3 +13,4 @@
 - [x] Task: Fix the word wrap issue on mobile
 - [x] Task: Finish all the pages so they are all operational
 - [x] Task: Add Milad Sphere to projects (mention testing out a professional design)
+- [x] Task: Fix random arrow not being accurate. Also, make arrow invisible till you click and also add a glow to the chosen planet.
