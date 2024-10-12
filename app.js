@@ -210,6 +210,7 @@ function handleIndex() {
 
     let totalSpin = 0;
 
+    const randomTextSpan = document.getElementById('random-text');
     const arrow = document.getElementById('randomArrow');
     const planets = document.querySelectorAll('.planet');
     const spinTime = 3000;
@@ -221,6 +222,7 @@ function handleIndex() {
     arrow.style.transform = `rotate(0deg)`;
     arrow.style.transformOrigin = '50% 50%';
     arrow.classList.remove('no-display');
+    randomTextSpan.classList.add('no-display');;
     spinning = true;
 
     spinInterval = setInterval(() => {
@@ -255,6 +257,7 @@ function handleIndex() {
 
       setTimeout(() => {
           arrow.classList.add('no-display');
+          randomTextSpan.classList.remove('no-display');
           spinning = false;
       }, 1000);
 
