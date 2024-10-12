@@ -1,15 +1,72 @@
 document.addEventListener("DOMContentLoaded", function () {
   const pageId = document.getElementById('pageId').textContent.trim();
+  handleNav(pageId);
+
   if (pageId === 'shows') {
     handleShows();
-  } else if(pageId === 'index'){
+  } else if (pageId === 'index') {
     handleIndex();
-  } else if (pageId === 'about'){
+  } else if (pageId === 'about') {
     handleAbout();
-  } else if(pageId === 'writing'){
+  } else if (pageId === 'writing') {
     handleWriting("The Portal Unseen");
+  } else if (pageId === 'projects'){
+    handleProjects();
   }
 });
+
+function handleNav(pageId) {
+  const navHtml = `
+  <header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Milad Sphere</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" id="nav-projects" href="projects.html">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="nav-shows" href="shows.html">Shows</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="nav-writing" href="writing.html">Writing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="nav-contact" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="nav-about" href="about.html">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>`;
+  
+  document.body.innerHTML = navHtml + document.body.innerHTML;
+  setActiveNav(pageId);
+}
+
+function setActiveNav(pageId) {
+  const navMap = {
+    'index': 'nav-index',
+    'projects': 'nav-projects',
+    'shows': 'nav-shows',
+    'writing': 'nav-writing',
+    'contact': 'nav-contact',
+    'about': 'nav-about'
+  };
+
+  const activeNavLink = document.getElementById(navMap[pageId]);
+  if (activeNavLink) {
+    activeNavLink.classList.add('active');
+  }
+}
+
 
 function handleWriting(selectedWriting) {
   fetch('writing/writing.json')
@@ -86,7 +143,7 @@ function handleShows() {
   listContainer.appendChild(descriptionContainer);
 
   async function loadShows() {
-    const response = await fetch('media/shows.txt');
+    const response = await fetch('shows/shows.txt');
     const text = await response.text();
     parseShows(text);
     updateCategory();
@@ -193,8 +250,6 @@ function handleIndex() {
       const offset = -30;
       const finalRotation = totalSpin + angle + offset;
 
-      console.log(`Total Spin: ${totalSpin}, Angle: ${angle}, Final Rotation: ${finalRotation}`);
-
       arrow.style.transform = `rotate(${finalRotation}deg)`;
       chosenPlanet.classList.add('active');
 
@@ -220,4 +275,54 @@ function handleAbout(){
 
   const ageSpan = document.getElementById("about-age"); 
   ageSpan.textContent = age;
+
+  loadTextFile('about/interests.txt', 'interests-list');
+  loadTextFile('about/languages.txt', 'languages-list');
+  loadTextFile('about/frameworks.txt', 'frameworks-list');
+  
+  function loadTextFile(filePath, listElementId) {
+    fetch(filePath)
+      .then(response => response.text())
+      .then(text => {
+        const items = text.split('\n').map(item => item.trim()).filter(item => item);
+        const listElement = document.getElementById(listElementId);
+        items.forEach(item => {
+          const li = document.createElement('li');
+          li.classList.add('list-group-item');
+          li.textContent = item;
+          listElement.appendChild(li);
+        });
+      })
+      .catch(error => console.error(`Error loading ${filePath}:`, error));
+  }
+}
+
+function handleProjects(){
+  fetch('projects/apps.json')
+    .then(response => response.json())
+    .then(data => renderProjects(data, 'apps-projects-container'));
+
+  fetch('projects/websites.json')
+    .then(response => response.json())
+    .then(data => renderProjects(data, 'website-projects-container'));
+
+    function renderProjects(projects, containerId) {
+      const container = document.getElementById(containerId);
+    
+      projects.forEach(project => {
+        const projectHtml = `
+          <div class="specific-project-container">
+            <h2>${project.title}</h2>
+            <p>${project.description}</p>
+            ${project.website ? `<p class="project-link">Website: <a class="link" href="${project.websiteLink}">${project.website}</a></p>` : ''}
+            ${project.download ? `<p class="project-link">Download: <a class="link" href="${project.downloadLink}">${project.download}</a></p>` : ''}
+            ${project.github ? `<p class="project-link">GitHub: <a class="link" href="${project.githubLink}">${project.github}</a></p>` : ''}
+            ${project.video ? `<p class="project-link">Video: <a class="link" href="${project.videoLink}">${project.video}</a></p>` : ''}
+            ${project.longVideo ? `<p class="project-link">Long Video: <a class="link" href="${project.longVideoLink}">${project.longVideo}</a></p>` : ''}
+          </div>
+        `;
+    
+        container.innerHTML += projectHtml;
+      });
+    }
 }

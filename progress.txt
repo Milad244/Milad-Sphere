@@ -1,12 +1,14 @@
 # Progress Tracker
 
 ## Short-Term Tasks
-- [ ] Task: 
+- [ ] Task: Add Icon to website
+- [ ] Task: Fix arrow being totally broken on mobile
+- [ ] Task: Fix projects links that go nowhere
+- [ ] Task: Increase regular planet size without them going towards the center
 
 ## Long-Term Tasks
 - [ ] Task: Unify a lot of the css 
-- [ ] Task: Add descriptions(about why I ranked it where I did) to each of my show rankings when you click on them
-- [ ] Task: Make all long text into text files and create a func to handle them easily.
+- [ ] Task: Add descriptions(about why I ranked it where I did) to each of my show rankings when you click on them (Maybe not)
 
 ## Completed Tasks
 - [x] Task: Add shows.
@@ -14,3 +16,5 @@
 - [x] Task: Finish all the pages so they are all operational
 - [x] Task: Add Milad Sphere to projects (mention testing out a professional design)
 - [x] Task: Fix random arrow not being accurate. Also, make arrow invisible till you click and also add a glow to the chosen planet.
+- [x] Task: Make navbar fully in js and not in html
+- [x] Task: Make all long text into text files and create a func to handle them easily.
