@@ -1,10 +1,8 @@
 # Progress Tracker
 
 ## Short-Term Tasks
-- [ ] Task: Add Icon to website
-- [ ] Task: Fix arrow being totally broken on mobile
-- [ ] Task: Fix projects links that go nowhere
 - [ ] Task: Increase regular planet size without them going towards the center
+- [ ] Task: Add more writing
 
 ## Long-Term Tasks
 - [ ] Task: Unify a lot of the css 
@@ -18,3 +16,6 @@
 - [x] Task: Fix random arrow not being accurate. Also, make arrow invisible till you click and also add a glow to the chosen planet.
 - [x] Task: Make navbar fully in js and not in html
 - [x] Task: Make all long text into text files and create a func to handle them easily.
+- [x] Task: Fix arrow being totally broken on mobile. SOLUTION: No arrow cause it is stupid. Instead, do something cool!
+- [x] Task: Fix projects links that go nowhere
+- [x] Task: Add Icon to website

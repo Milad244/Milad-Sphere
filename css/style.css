@@ -147,14 +147,39 @@ a {
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.6), 0 0 40px rgba(0, 0, 0, 0.8), 0 0 60px rgba(255, 0, 255, 0.8);
 }
 
-.planet-random .myarrow {
-  font-size: 2em;
-  display: block;
-  z-index: 10;
+.planet-random:hover {
+  transform: scale(1.1);
 }
 
-.planet-random:hover {
-  transform: scale(1.2);
+@keyframes blackHoleSpreadAll {
+  0% {
+    box-shadow: none;
+    transform: scale(1);
+  }
+  25% {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7), 0 0 50px rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
+  }
+  50% {
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8), 0 0 80px rgba(0, 0, 0, 0.7), 0 0 100px rgba(0, 0, 0, 0.6);
+    transform: scale(1.1);
+  }
+  75% {
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.9), 0 0 100px rgba(0, 0, 0, 0.8), 0 0 120px rgba(0, 0, 0, 0.7);
+    transform: scale(1.15);
+  }
+  90% {
+    box-shadow: 0 0 120px rgba(0, 0, 0, 1), 0 0 150px rgba(0, 0, 0, 0.9), 0 0 180px rgba(0, 0, 0, 0.8);
+    transform: scale(1.2);
+  }
+  100% {
+    box-shadow: none;
+    transform: scale(1);
+  }
+}
+
+.planet.planet-animating {
+  animation: blackHoleSpreadAll 2s;
 }
 
 @media (max-width: 500px) {

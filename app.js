@@ -199,69 +199,43 @@ function handleShows() {
 }
 
 function handleIndex() {
-  let spinInterval;
-  let spinning = false;
+  let animation = false;
+  let prevPlanetIndex;
 
   document.getElementById('randomPlanet').addEventListener('click', function(event) {
-
     event.preventDefault();
 
-    if (spinning) return;
+    if (animation) return;
 
-    let totalSpin = 0;
-
-    const randomTextSpan = document.getElementById('random-text');
-    const arrow = document.getElementById('randomArrow');
     const planets = document.querySelectorAll('.planet');
-    const spinTime = 3000;
 
     planets.forEach(planet => {
       planet.classList.remove('active');
     });   
 
-    arrow.style.transform = `rotate(0deg)`;
-    arrow.style.transformOrigin = '50% 50%';
-    arrow.classList.remove('no-display');
-    randomTextSpan.classList.add('no-display');;
-    spinning = true;
+    animation = true;
 
-    spinInterval = setInterval(() => {
-        totalSpin += 20;
-        arrow.style.transform = `rotate(${totalSpin}deg)`;
-    }, 50);
+    planets.forEach(planet => {
+      planet.classList.add('planet-animating');
+    });
 
+    let randomIndex;
+    do {
+      randomIndex = Math.floor(Math.random() * planets.length);
+    } while (randomIndex === prevPlanetIndex);
+    
+    const chosenPlanet = planets[randomIndex];
+    prevPlanetIndex = randomIndex;
+    
     setTimeout(() => {
-      clearInterval(spinInterval);
+      planets.forEach(planet => {
+        planet.classList.remove('planet-animating');
+      });
 
-      const randomIndex = Math.floor(Math.random() * planets.length);
-      const chosenPlanet = planets[randomIndex];     
-
-      const chosenPlanetCoords = chosenPlanet.getBoundingClientRect();
-      const arrowCoords = arrow.getBoundingClientRect();
-
-      const arrowCenterX = arrowCoords.left + arrowCoords.width / 2;
-      const arrowCenterY = arrowCoords.top + arrowCoords.height / 2;
-      const planetCenterX = chosenPlanetCoords.left + chosenPlanetCoords.width / 2;
-      const planetCenterY = chosenPlanetCoords.top + chosenPlanetCoords.height / 2;
-
-      const angle = Math.atan2(
-          planetCenterY - arrowCenterY,
-          planetCenterX - arrowCenterX
-      ) * (180 / Math.PI);
-
-      const offset = -30;
-      const finalRotation = totalSpin + angle + offset;
-
-      arrow.style.transform = `rotate(${finalRotation}deg)`;
       chosenPlanet.classList.add('active');
 
-      setTimeout(() => {
-          arrow.classList.add('no-display');
-          randomTextSpan.classList.remove('no-display');
-          spinning = false;
-      }, 1000);
-
-    }, spinTime);
+      animation = false;
+    }, 2000);
   });
 }
 
