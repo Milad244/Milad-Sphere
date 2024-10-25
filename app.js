@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
   } else if (pageId === 'about') {
     handleAbout();
   } else if (pageId === 'writing') {
-    handleWriting("The Portal Unseen");
+    handleWriting("Beyond Life and Death: The Path to You");
   } else if (pageId === 'projects'){
     handleProjects();
   }
@@ -78,14 +78,14 @@ function handleWriting(selectedWriting) {
       if (writing) {
         document.getElementById('writing-title').innerText = writing.title;
         document.getElementById('writing-byline').innerText = writing.byline;
-        loadAuthorNotes(writing.authorNotes);
 
+        if (writing.prologue) loadPrologue(writing.prologue);
+        if (writing.authorNotes) loadAuthorNotes(writing.authorNotes);
         if (writing.chapters) {
           loadChapters(writing.chapters);
         } else {
           loadContent(writing.contentFile);
         }
-
       } else {
         console.error('Writing not found');
       }
@@ -94,9 +94,17 @@ function handleWriting(selectedWriting) {
 
     async function loadContent(filePath) {
       const content = await fetchTextFromFile(filePath);
-      const paragraphs = content.split('\n').map(line => `<p>${line}</p>`).join('');
+    
+      const keywordMap = {
+        'DOTTEDLINE': '<hr style="border-top: 1px dotted #000;">',
+      };
+    
+      const paragraphs = content.split('\n').map(line => 
+        keywordMap[line] || `<p>${line}</p>`
+      ).join('');
+    
       document.getElementById('writing-content').innerHTML = paragraphs;
-    }
+    }    
     
     async function loadChapters(chapters) {
       const writingContentElement = document.getElementById('writing-content');
@@ -106,12 +114,23 @@ function handleWriting(selectedWriting) {
         const chapterTitleElement = document.createElement('h4');
         chapterTitleElement.innerText = chapter.chapterTitle;
     
+        const keywordMap = {
+          'DOTTEDLINE': '<hr style="border-top: 1px dotted #000;">',
+        };
+
         const chapterContent = await fetchTextFromFile(chapter.contentFile);
-        const paragraphs = chapterContent.split('\n').map(line => `<p>${line}</p>`).join('');
+        const paragraphs = chapterContent.split('\n').map(line => 
+          keywordMap[line.trim()] || `<p>${line}</p>`
+        ).join('');
     
         writingContentElement.appendChild(chapterTitleElement);
         writingContentElement.innerHTML += paragraphs;
       }
+    }
+
+    async function loadPrologue(filePath) {
+      const prologue = await fetchTextFromFile(filePath);
+      document.getElementById('writing-prologue').innerText = `Prologue: ${prologue}`;
     }
     
     async function loadAuthorNotes(filePath) {
@@ -235,7 +254,7 @@ function handleIndex() {
       chosenPlanet.classList.add('active');
 
       animation = false;
-    }, 2000);
+    }, 1500);
   });
 }
 

@@ -118,13 +118,17 @@ a {
 }
 
 .planet:hover {
-  /* transform: scale(1.2);
-  /*Causes planets to go nuts*/ 
+  background: linear-gradient(135deg, #2b4a8e, #1c2c3f); /* Darker gradient on hover */
+  box-shadow: 0 0 25px rgba(58, 94, 174, 1), 0 0 35px rgba(58, 94, 174, 0.7); /* Stronger shadow */
 }
 
 .planet.active {
   background: linear-gradient(135deg, #d00000, #7f0000);
   box-shadow: 0 0 20px rgba(199, 0, 0, 0.8);;
+}
+.planet.active:hover {
+  background: linear-gradient(135deg, #a00000, #5f0000); /* Darker shade for active hover */
+  box-shadow: 0 0 25px rgba(199, 0, 0, 1); /* Enhanced shadow on hover */
 }
 
 .planet-random {
@@ -179,7 +183,7 @@ a {
 }
 
 .planet.planet-animating {
-  animation: blackHoleSpreadAll 2s;
+  animation: blackHoleSpreadAll 1.5s;
 }
 
 @media (max-width: 500px) {
@@ -413,6 +417,13 @@ a {
   margin-top: 20px;
 }
 
+#writing-prologue {
+  font-size: 1.1em;
+  font-style: italic;
+  color: #777;
+  text-indent: 1.5em;
+  margin-bottom: 10px;
+}
 
 /* About */
 .about-page {

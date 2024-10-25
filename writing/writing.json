@@ -16,6 +16,22 @@
           "contentFile": "writing/The Portal Unseen/Chapter1.txt"
         }
       ]
+    },
+    {
+      "title": "Beyond Life and Death: The Path to You",
+      "byline": "Milad Abdi, 2024-10-25",
+      "prologue": "writing/The Path to You/Prologue.txt",
+      "authorNotes": "writing/The Path to You/AuthorNotes.txt",
+      "chapters": [
+        {
+          "chapterTitle": "Chapter 1 - Separation",
+          "contentFile": "writing/The Path to You/Chapter1.txt"
+        },
+        {
+          "chapterTitle": "Chapter 2 - Afterlife",
+          "contentFile": "writing/The Path to You/Chapter2.txt"
+        }
+      ]
     }
   ]
 }

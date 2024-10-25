@@ -1,8 +1,7 @@
 # Progress Tracker
 
 ## Short-Term Tasks
-- [ ] Task: Increase regular planet size without them going towards the center
-- [ ] Task: Add more writing
+- [ ] Task: Unify a lot of the JS
 
 ## Long-Term Tasks
 - [ ] Task: Unify a lot of the css 
@@ -19,3 +18,5 @@
 - [x] Task: Fix arrow being totally broken on mobile. SOLUTION: No arrow cause it is stupid. Instead, do something cool!
 - [x] Task: Fix projects links that go nowhere
 - [x] Task: Add Icon to website
+- [x] Task: Add more writing
+- [x] Task: Increase regular planet size without them going towards the center (Could not so instead added some hover effects)
