@@ -1,0 +1,19 @@
+Players: 2+  
+Objective: Get rid of all your cards to stay safe. Avoid losing lives by not getting caught bluffing. The last player with cards loses one life.
+
+Setup:  
+1. Use a standard deck (including jokers).  
+2. Deal 5 cards to each player. Discard any extras.  
+3. Choose the House Color (red or black). Jokers count as the House Color.  
+4. Each player starts with 5 lives.  
+
+Gameplay:  
+1. Players take turns placing cards face down. The goal is to match the House Color, but bluffing is allowed.  
+2. The next player can call a bluff:  
+   - If the cards don’t match, the player who placed them loses a life.  
+   - If the cards match, the player who called the bluff loses a life.  
+3. If a player gets rid of their cards, they are safe and out for the rest of the round.  
+4. The round ends when only one player has cards left, and they lose a life.  
+
+Winning:  
+The game continues until only one player has lives remaining. That player wins!

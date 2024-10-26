@@ -20,3 +20,5 @@
 - [x] Task: Add Icon to website
 - [x] Task: Add more writing
 - [x] Task: Increase regular planet size without them going towards the center (Could not so instead added some hover effects)
+- [x] Task: Reset all writing when handling between them
+- [x] Task: Make each writing have its own specific url

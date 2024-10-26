@@ -1,3 +1,6 @@
+// + is good = is okay - is bad
+
+// +
 document.addEventListener("DOMContentLoaded", function () {
   const pageId = document.getElementById('pageId').textContent.trim();
   handleNav(pageId);
@@ -9,12 +12,15 @@ document.addEventListener("DOMContentLoaded", function () {
   } else if (pageId === 'about') {
     handleAbout();
   } else if (pageId === 'writing') {
-    handleWriting("Beyond Life and Death: The Path to You");
+    createWritingSelector();
+    const title = getWritingTitleFromURL();
+    selectWriting(title || stories[0]);
   } else if (pageId === 'projects'){
     handleProjects();
   }
 });
 
+// +
 function handleNav(pageId) {
   const navHtml = `
   <header>
@@ -51,6 +57,7 @@ function handleNav(pageId) {
   setActiveNav(pageId);
 }
 
+// +
 function setActiveNav(pageId) {
   const navMap = {
     'index': 'nav-index',
@@ -67,8 +74,61 @@ function setActiveNav(pageId) {
   }
 }
 
+// + Writing Stuff
+
+const stories = [
+  "Beyond Life and Death: The Path to You",
+  "5-Bluff",
+  "The Portal Unseen",
+  "The Dream"
+];
+
+function getWritingTitleFromURL() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const title = urlParams.get('title'); 
+  return title ? decodeURIComponent(title) : null; 
+}
+
+function selectWriting(writingTitle) {
+  const url = new URL(window.location);
+  url.searchParams.set('title', writingTitle);
+  window.history.pushState({}, '', url);
+  handleWriting(writingTitle);
+}
+
+function createWritingSelector() {
+  const headerWrapper = document.getElementById('writing-header');
+
+  const storySelector = document.createElement('select');
+  storySelector.id = 'story-selector';
+  
+  stories.forEach(story => {
+    const option = document.createElement('option');
+    option.value = story;
+    option.textContent = story;
+    storySelector.appendChild(option);
+  });
+  
+  storySelector.onchange = function() {
+    selectWriting(this.value); 
+  };
+  
+  headerWrapper.appendChild(storySelector);
+
+  const title = getWritingTitleFromURL();
+  if (title) {
+    storySelector.value = title;
+  }
+}
 
 function handleWriting(selectedWriting) {
+
+  document.getElementById('writing-title').innerText = '';
+  document.getElementById('writing-byline').innerText = '';
+  document.getElementById('writing-content').innerHTML = '';
+  document.getElementById('writing-prologue').innerText = '';
+  document.getElementById('writing-author-notes').innerText = '';
+
   fetch('writing/writing.json')
     .then(response => response.json())
     .then(data => {
@@ -152,6 +212,7 @@ function handleWriting(selectedWriting) {
     }
 }
 
+// =
 function handleShows() {
   const categories = [];
   let currentCategoryIndex = 0;
@@ -217,6 +278,7 @@ function handleShows() {
   loadShows();
 }
 
+// +
 function handleIndex() {
   let animation = false;
   let prevPlanetIndex;
@@ -258,6 +320,7 @@ function handleIndex() {
   });
 }
 
+// =
 function handleAbout(){
   const birthDate = new Date("2006-11-30");
   const today = new Date();
@@ -293,6 +356,7 @@ function handleAbout(){
   }
 }
 
+// =
 function handleProjects(){
   fetch('projects/apps.json')
     .then(response => response.json())

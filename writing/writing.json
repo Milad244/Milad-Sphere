@@ -32,6 +32,13 @@
           "contentFile": "writing/The Path to You/Chapter2.txt"
         }
       ]
+    },
+    {
+      "title": "5-Bluff",
+      "byline": "Milad Abdi, 2024-10-26",
+      "authorNotes": "writing/5-Bluff/AuthorNotes.txt",
+      "contentFile": "writing/5-Bluff/Content.txt"
     }
+
   ]
 }
