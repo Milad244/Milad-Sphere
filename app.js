@@ -78,7 +78,6 @@ function setActiveNav(pageId) {
 
 const stories = [
   "Beyond Life and Death: The Path to You",
-  "5-Bluff",
   "The Portal Unseen",
   "The Dream"
 ];
