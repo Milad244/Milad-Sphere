@@ -1,0 +1,38 @@
+[
+  {
+    "genre": "Animes",
+    "description": "My favourite Animes of all time. (I only watch dubbed anime, so you can't really judge my list based on the sub versions because IMO they're totally different shows)",
+    "list": [
+      "Kaguya-sama: Love Is War",
+      "Hunter × Hunter",
+      "Black Clover",
+      "TONIKAWA: Over The Moon For You",
+      "My Dress-Up Darling",
+      "Naruto",
+      "Death Note",
+      "The Seven Deadly Sins",
+      "The Devil is a Part-Timer!",
+      "Alya Sometimes Hides Her Feelings in Russian",
+      "Shikimori's Not Just a Cutie",
+      "Horimiya"
+    ]
+  },
+  {
+    "genre": "TV Shows",
+    "description": "My favourite TV Shows of all time.",
+    "list": [
+      "Once Upon a Time (ABC Studios)",
+      "The Flash",
+      "Prison Break",
+      "Lucifer",
+      "Loki (only watched first season)"
+    ]
+  },
+  {
+    "genre": "Movies",
+    "description": "My favourite Movies of all time.",
+    "list": [
+      "Marvel Movies before they declined"
+    ]
+  }
+]

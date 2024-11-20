@@ -22,3 +22,4 @@
 - [x] Task: Increase regular planet size without them going towards the center (Could not so instead added some hover effects)
 - [x] Task: Reset all writing when handling between them
 - [x] Task: Make each writing have its own specific url
+- [x] Task: Finish converting all text files for html into json

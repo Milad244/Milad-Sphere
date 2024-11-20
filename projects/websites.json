@@ -2,29 +2,59 @@
   {
     "title": "Stracker",
     "description": "Stracker is a website which tracks what season and episode you are currently at on your favourite shows! Moreover, you are able to see all your watch history, including the date each episode was watched. But wait there's more! You can also see an amazing graph of your watch history (found in settings). There are many more features so please check this website out.",
-    "website": "https://milad244.github.io/Stracker/",
-    "websiteLink": "https://milad244.github.io/Stracker/",
-    "github": "https://github.com/Milad244/Stracker",
-    "githubLink": "https://github.com/Milad244/Stracker",
-    "video": "Coming Soon",
-    "videoLink": ""
+    "links": [
+      {
+        "name": "Website",
+        "label": "https://milad244.github.io/Stracker/",
+        "url": "https://milad244.github.io/Stracker/"
+      },
+      {
+        "name": "GitHub",
+        "label": "https://github.com/Milad244/Stracker",
+        "url": "https://github.com/Milad244/Stracker"
+      },
+      {
+        "name": "Video",
+        "label": "Coming Soon",
+        "url": ""
+      }
+    ]
   },
   {
     "title": "Faster Click",
     "description": "Faster Click is a website that allows you to practice your clicking speed and accuracy. In addition, cool statistics of your improvement, competitive modes, and leaderboards will be there. Site is still in very early development.",
-    "website": "https://milad244.github.io/faster-click/",
-    "websiteLink": "https://milad244.github.io/faster-click/",
-    "github": "https://github.com/Milad244/faster-click",
-    "githubLink": "https://github.com/Milad244/faster-click"
+    "links": [
+      {
+        "name": "Website",
+        "label": "https://milad244.github.io/faster-click/",
+        "url": "https://milad244.github.io/faster-click/"
+      },
+      {
+        "name": "GitHub",
+        "label": "https://github.com/Milad244/faster-click",
+        "url": "https://github.com/Milad244/faster-click"
+      }
+    ]
   },
   {
     "title": "Milad Sphere",
     "description": "This is my first attempt at a professional style of website. It has my contact information, projects (some that aren't even on my github), my writing, and shows some of my personality.",
-    "website": "You're already here!",
-    "websiteLink": "",
-    "github": "https://github.com/Milad244/Milad-Sphere",
-    "githubLink": "https://github.com/Milad244/Milad-Sphere",
-    "video": "Coming Soon",
-    "videoLink": ""
+    "links": [
+      {
+        "name": "Website",
+        "label": "You're already here!",
+        "url": ""
+      },
+      {
+        "name": "GitHub",
+        "label": "https://github.com/Milad244/Milad-Sphere",
+        "url": "https://github.com/Milad244/Milad-Sphere"
+      },
+      {
+        "name": "Video",
+        "label": "Coming Soon",
+        "url": ""
+      }
+    ]
   }
 ]

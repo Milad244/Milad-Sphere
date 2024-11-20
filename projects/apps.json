@@ -2,29 +2,80 @@
   {
     "title": "Inticate",
     "description": "Inticate is a 2D platformer with unique coins that have interesting effects. The goal of the game is to complete the levels, but be warned, besides the easy level, this game might just be impossible.",
-    "download": "https://drive.google.com/drive/u/1/folders/1q55ieRFvK-qaYjIJoLW5TrZsFOaqNFwz",
-    "downloadLink": "https://drive.google.com/drive/u/1/folders/1q55ieRFvK-qaYjIJoLW5TrZsFOaqNFwz",
-    "video": "https://www.youtube.com/watch?v=gdsiTgjD_no",
-    "videoLink": "https://www.youtube.com/watch?v=gdsiTgjD_no",
-    "longVideo": "https://www.youtube.com/watch?v=rLh1julkaA4&t",
-    "longVideoLink": "https://www.youtube.com/watch?v=rLh1julkaA4&t"
+    "links": [
+      {
+        "name": "Download",
+        "label": "https://drive.google.com/drive/u/1/folders/1q55ieRFvK-qaYjIJoLW5TrZsFOaqNFwz",
+        "url": "https://drive.google.com/drive/u/1/folders/1q55ieRFvK-qaYjIJoLW5TrZsFOaqNFwz"
+      },
+      {
+        "name": "Video",
+        "label": "https://www.youtube.com/watch?v=gdsiTgjD_no",
+        "url": "https://www.youtube.com/watch?v=gdsiTgjD_no"
+      },
+      {
+        "name": "Long Video",
+        "label": "https://www.youtube.com/watch?v=rLh1julkaA4&t",
+        "url": "https://www.youtube.com/watch?v=rLh1julkaA4&t"
+      }
+    ]
+  },
+  {
+    "title": "QuickTTS",
+    "description": "QuickTTS is a text to speech app. You can adjust the volume, speed, and voice of your TTS!",
+    "links": [
+      {
+        "name": "GitHub",
+        "label": "https://github.com/Milad244/QuickTTS",
+        "url": "https://github.com/Milad244/QuickTTS"
+      },
+      {
+        "name": "Download",
+        "label": "https://github.com/Milad244/QuickTTS/tree/download",
+        "url": "https://github.com/Milad244/QuickTTS/tree/download"
+      },
+      {
+        "name": "Video",
+        "label": "Coming Soon",
+        "url": ""
+      }
+    ]
   },
   {
     "title": "SharpPlay",
     "description": "SharpPlay is a music player (think of Spotify) designed for people who love songs and any audio that their favorite music player just doesn't have. SharpPlay not only has all the normal features of a music player but also provides amazing statistics about what you listen to, along with a new SUPER SHUFFLE feature. Instead of going on YouTube, you can simply get the MP3 file and use my amazing music player!",
-    "download": "Currently only available by downloading from GitHub and running the script",
-    "downloadLink": "",
-    "github": "https://github.com/Milad244/SharpPlay",
-    "githubLink": "https://github.com/Milad244/SharpPlay",
-    "video": "Coming Soon",
-    "videoLink": ""
+    "links": [
+      {
+        "name": "GitHub",
+        "label": "https://github.com/Milad244/SharpPlay",
+        "url": "https://github.com/Milad244/SharpPlay"
+      },
+      {
+        "name": "Download",
+        "label": "Currently can only get from the repository",
+        "url": "https://github.com/Milad244/SharpPlay"
+      },
+      {
+        "name": "Video",
+        "label": "Coming Soon",
+        "url": ""
+      }
+    ]
   },
   {
     "title": "Emma",
     "description": "Emma is a personal assistant that communicates via audio. I made this assistant for myself and a long time ago, so unless I revamp her she will not be available.",
-    "download": "Unavailable",
-    "downloadLink": "",
-    "github": "Unavailable",
-    "githubLink": ""
+    "links": [
+      {
+        "name": "GitHub",
+        "label": "Unavailable",
+        "url": ""
+      },
+      {
+        "name": "Download",
+        "label": "Unavailable",
+        "url": ""
+      }
+    ]
   }
 ]

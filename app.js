@@ -78,7 +78,6 @@ function setActiveNav(pageId) {
 
 const stories = [
   "Beyond Life and Death: The Path to You",
-  "The Portal Unseen",
   "The Dream"
 ];
 
@@ -222,31 +221,15 @@ function handleShows() {
   listContainer.appendChild(descriptionContainer);
 
   async function loadShows() {
-    const response = await fetch('shows/shows.txt');
-    const text = await response.text();
-    parseShows(text);
+    const response = await fetch('shows/shows.json');
+    const data = await response.json();
+    categories.push(...data);
     updateCategory();
-  }
-
-  function parseShows(text) {
-    const lines = text.split('\n').map(line => line.trim()).filter(line => line);
-    let currentCategory = null;
-
-    lines.forEach(line => {
-      if (line.endsWith(':')) {
-        currentCategory = { name: line.replace(':', ''), shows: [], description: '' };
-        categories.push(currentCategory);
-      } else if (line.startsWith('Description')) {
-        currentCategory.description = line.replace('Description - ', '');
-      } else if (currentCategory) {
-        currentCategory.shows.push(line);
-      }
-    });
   }
 
   function updateCategory() {
     const currentCategory = categories[currentCategoryIndex];
-    categoryTitle.textContent = currentCategory.name;
+    categoryTitle.textContent = currentCategory.genre;
 
     descriptionContainer.textContent = currentCategory.description;
 
@@ -255,10 +238,10 @@ function handleShows() {
 
     const ol = document.createElement('ol');
     ol.classList.add('list-group');
-    currentCategory.shows.forEach(show => {
+    currentCategory.list.forEach((show, index) => {
       const li = document.createElement('li');
       li.classList.add('list-group-item');
-      li.textContent = show;
+      li.textContent = `${index + 1}. ${show}`;
       ol.appendChild(li);
     });
     listContainer.appendChild(ol);
@@ -369,19 +352,21 @@ function handleProjects(){
       const container = document.getElementById(containerId);
     
       projects.forEach(project => {
+        const linksHtml = project.links
+          .map(link => 
+            `<p class="project-link">${link.name}: <a class="link" href="${link.url}">${link.label}</a></p>`
+          )
+          .join('');
+      
         const projectHtml = `
           <div class="specific-project-container">
             <h2>${project.title}</h2>
             <p>${project.description}</p>
-            ${project.website ? `<p class="project-link">Website: <a class="link" href="${project.websiteLink}">${project.website}</a></p>` : ''}
-            ${project.download ? `<p class="project-link">Download: <a class="link" href="${project.downloadLink}">${project.download}</a></p>` : ''}
-            ${project.github ? `<p class="project-link">GitHub: <a class="link" href="${project.githubLink}">${project.github}</a></p>` : ''}
-            ${project.video ? `<p class="project-link">Video: <a class="link" href="${project.videoLink}">${project.video}</a></p>` : ''}
-            ${project.longVideo ? `<p class="project-link">Long Video: <a class="link" href="${project.longVideoLink}">${project.longVideo}</a></p>` : ''}
+            ${linksHtml}
           </div>
         `;
-    
+      
         container.innerHTML += projectHtml;
-      });
+      });      
     }
 }
