@@ -77,6 +77,7 @@ function setActiveNav(pageId) {
 // + Writing Stuff
 
 const stories = [
+  "A Timeless Meeting",
   "Beyond Life and Death: The Path to You",
   "The Dream"
 ];

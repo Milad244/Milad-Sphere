@@ -38,7 +38,27 @@
       "byline": "Milad Abdi, 2024-10-26",
       "authorNotes": "writing/5-Bluff/AuthorNotes.txt",
       "contentFile": "writing/5-Bluff/Content.txt"
+    },
+    {
+      "title": "Beyond Life and Death: The Path to You",
+      "byline": "Milad Abdi, 2024-10-25",
+      "prologue": "writing/The Path to You/Prologue.txt",
+      "authorNotes": "writing/The Path to You/AuthorNotes.txt",
+      "chapters": [
+        {
+          "chapterTitle": "Chapter 1 - Separation",
+          "contentFile": "writing/The Path to You/Chapter1.txt"
+        },
+        {
+          "chapterTitle": "Chapter 2 - Afterlife",
+          "contentFile": "writing/The Path to You/Chapter2.txt"
+        }
+      ]
+    },
+    {
+      "title": "A Timeless Meeting",
+      "byline": "Milad Abdi, 2024-11-30",
+      "contentFile": "writing/A Timeless Meeting/Content.txt"
     }
-
   ]
 }
