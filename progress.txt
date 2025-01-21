@@ -1,11 +1,11 @@
 # Progress Tracker
 
 ## Short-Term Tasks
-- [ ] Task: Unify a lot of the JS
+- [ ] Task: 
 
 ## Long-Term Tasks
-- [ ] Task: Unify a lot of the css 
 - [ ] Task: Add descriptions(about why I ranked it where I did) to each of my show rankings when you click on them (Maybe not)
+- [ ] Task: Unify a lot of the JS
 
 ## Completed Tasks
 - [x] Task: Add shows.
@@ -23,3 +23,5 @@
 - [x] Task: Reset all writing when handling between them
 - [x] Task: Make each writing have its own specific url
 - [x] Task: Finish converting all text files for html into json
+- [x] Task: Add YT to contact
+- [x] Task: Unify a lot of the css 
