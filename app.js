@@ -77,9 +77,9 @@ function setActiveNav(pageId) {
 // + Writing Stuff
 
 const stories = [
-  "Perfectionism Synopsis",
   "A Timeless Meeting",
   "Beyond Life and Death: The Path to You",
+  "Perfectionism Synopsis",
   "The Dream"
 ];
 
