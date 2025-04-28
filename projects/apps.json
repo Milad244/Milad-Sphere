@@ -4,6 +4,11 @@
     "description": "Transcension is a 2D game I am currently developing that has a strong story with fun gameplay.",
     "links": [
       {
+        "name": "Download",
+        "label": "https://drive.google.com/drive/folders/1GW2xfNTXucUDYwgfJ1mUfnLn26lJOLyx?usp=sharing",
+        "url": "https://drive.google.com/drive/folders/1GW2xfNTXucUDYwgfJ1mUfnLn26lJOLyx?usp=sharing"
+      },
+      {
         "name": "GitHub",
         "label": "https://github.com/Milad244/Transcension",
         "url": "https://github.com/Milad244/Transcension"
@@ -12,6 +17,27 @@
         "name": "Video Series",
         "label": "https://www.youtube.com/playlist?list=PLesP53Zl6Cp2Jux0-xHTzYutJgp_b2mdj",
         "url": "https://www.youtube.com/playlist?list=PLesP53Zl6Cp2Jux0-xHTzYutJgp_b2mdj"
+      }
+    ]
+  },
+  {
+    "title": "SharpPlay",
+    "description": "SharpPlay is a music player (think of Spotify) designed for people who love songs and any audio that their favorite music player just doesn't have. SharpPlay not only has all the normal features of a music player but also provides amazing statistics about what you listen to, along with a new SUPER SHUFFLE feature. Instead of going on YouTube, you can simply get the MP3 file and use my amazing music player!",
+    "links": [
+      {
+        "name": "GitHub",
+        "label": "https://github.com/Milad244/SharpPlay",
+        "url": "https://github.com/Milad244/SharpPlay"
+      },
+      {
+        "name": "Download",
+        "label": "Currently can only get from the repository",
+        "url": "https://github.com/Milad244/SharpPlay"
+      },
+      {
+        "name": "Video",
+        "label": "Coming Soon",
+        "url": ""
       }
     ]
   },
@@ -49,27 +75,6 @@
         "name": "Download",
         "label": "https://github.com/Milad244/QuickTTS/tree/download",
         "url": "https://github.com/Milad244/QuickTTS/tree/download"
-      },
-      {
-        "name": "Video",
-        "label": "Coming Soon",
-        "url": ""
-      }
-    ]
-  },
-  {
-    "title": "SharpPlay",
-    "description": "SharpPlay is a music player (think of Spotify) designed for people who love songs and any audio that their favorite music player just doesn't have. SharpPlay not only has all the normal features of a music player but also provides amazing statistics about what you listen to, along with a new SUPER SHUFFLE feature. Instead of going on YouTube, you can simply get the MP3 file and use my amazing music player!",
-    "links": [
-      {
-        "name": "GitHub",
-        "label": "https://github.com/Milad244/SharpPlay",
-        "url": "https://github.com/Milad244/SharpPlay"
-      },
-      {
-        "name": "Download",
-        "label": "Currently can only get from the repository",
-        "url": "https://github.com/Milad244/SharpPlay"
       },
       {
         "name": "Video",
