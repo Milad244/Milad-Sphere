@@ -22,7 +22,7 @@
   },
   {
     "title": "SharpPlay",
-    "description": "SharpPlay is a music player (think of Spotify) designed for people who love songs and any audio that their favorite music player just doesn't have. SharpPlay not only has all the normal features of a music player but also provides amazing statistics about what you listen to, along with a new SUPER SHUFFLE feature. Instead of going on YouTube, you can simply get the MP3 file and use my amazing music player!",
+    "description": "SharpPlay is a custom music player I built for people who value privacy, customizability, and data. All your data is local, far out of reach from the people who seek to sell it. Moreover, you can explore your usage statistics for individual songs and your overall listening habits, with the latter being displayed elegantly on a graph within the app.",
     "links": [
       {
         "name": "GitHub",
@@ -31,13 +31,13 @@
       },
       {
         "name": "Download",
-        "label": "Currently can only get from the repository",
-        "url": "https://github.com/Milad244/SharpPlay"
+        "label": "https://drive.google.com/drive/folders/1TdcCWyb4hE3EUuzfdwAOu2fUKrrQcvxI?usp=sharing",
+        "url": "https://drive.google.com/drive/folders/1TdcCWyb4hE3EUuzfdwAOu2fUKrrQcvxI?usp=sharing"
       },
       {
         "name": "Video",
-        "label": "Coming Soon",
-        "url": ""
+        "label": "https://www.youtube.com/watch?v=u3_qQgihxpc&pp=ygUSc2hhcnBQbGF5IHNob3djYXNl",
+        "url": "https://www.youtube.com/watch?v=u3_qQgihxpc&pp=ygUSc2hhcnBQbGF5IHNob3djYXNl"
       }
     ]
   },
