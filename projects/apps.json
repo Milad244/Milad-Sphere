@@ -1,7 +1,7 @@
 [
   {
     "title": "Transcension",
-    "description": "Transcension is a 2D game I am currently developing that has a strong story with fun gameplay.",
+    "description": "Transcension is a 2D game I developed myself. Trapped inside your mind, you must traverse a treacherous path, overcome various traps, and defeat the guard of your prison.",
     "links": [
       {
         "name": "Download",
@@ -59,27 +59,6 @@
         "name": "Long Video",
         "label": "https://www.youtube.com/watch?v=rLh1julkaA4&t",
         "url": "https://www.youtube.com/watch?v=rLh1julkaA4&t"
-      }
-    ]
-  },
-  {
-    "title": "QuickTTS",
-    "description": "QuickTTS is a text to speech app. You can adjust the volume, speed, and voice of your TTS!",
-    "links": [
-      {
-        "name": "GitHub",
-        "label": "https://github.com/Milad244/QuickTTS",
-        "url": "https://github.com/Milad244/QuickTTS"
-      },
-      {
-        "name": "Download",
-        "label": "https://github.com/Milad244/QuickTTS/tree/download",
-        "url": "https://github.com/Milad244/QuickTTS/tree/download"
-      },
-      {
-        "name": "Video",
-        "label": "Coming Soon",
-        "url": ""
       }
     ]
   },

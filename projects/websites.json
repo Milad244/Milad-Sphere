@@ -1,5 +1,21 @@
 [
   {
+    "title": "SFU Undergraduate Statistics Visualized",
+    "description": "Simon Fraser University Undergraduate Statistics Visualized takes the abundant data that SFU collects and repackages it into a user-friendly Flask website containing the most significant information. This project mainly focuses on data from 2023/24 regarding undergraduate students.",
+    "links": [
+      {
+        "name": "Website",
+        "label": "https://milad244.pythonanywhere.com/",
+        "url": "https://milad244.pythonanywhere.com/"
+      },
+      {
+        "name": "GitHub",
+        "label": "https://github.com/Milad244/SFU-Stats-Visualized",
+        "url": "https://github.com/Milad244/SFU-Stats-Visualized"
+      }
+    ]
+  },
+  {
     "title": "Stracker",
     "description": "Stracker is a website which tracks what season and episode you are currently at on your favourite shows! Moreover, you are able to see all your watch history, including the date each episode was watched. But wait there's more! You can also see an amazing graph of your watch history (found in settings). There are many more features so please check this website out.",
     "links": [
@@ -12,11 +28,6 @@
         "name": "GitHub",
         "label": "https://github.com/Milad244/Stracker",
         "url": "https://github.com/Milad244/Stracker"
-      },
-      {
-        "name": "Video",
-        "label": "Coming Soon",
-        "url": ""
       }
     ]
   },
@@ -49,11 +60,6 @@
         "name": "GitHub",
         "label": "https://github.com/Milad244/Milad-Sphere",
         "url": "https://github.com/Milad244/Milad-Sphere"
-      },
-      {
-        "name": "Video",
-        "label": "Coming Soon",
-        "url": ""
       }
     ]
   }
